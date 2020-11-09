@@ -1,0 +1,33 @@
+@startuml
+
+class Chess
+class Player
+class Board
+class Move
+class Square
+class Turn
+class Coordinate
+
+Chess *--> Turn
+Chess *--> Board
+Chess o--> "2" Player
+Board *--> "8x8" Square
+Board --> "32" Piece
+Player --> "16" Piece
+Square *--> Coordinate
+Square --> Piece
+
+
+Piece <|-- King
+Piece <|-- Queen
+Piece <|-- Rook
+Piece <|-- Knight
+Piece <|-- Bishop
+Piece <|-- Pawn
+
+Piece *--> Movement
+Piece --> Coordinate
+
+
+
+@enduml
